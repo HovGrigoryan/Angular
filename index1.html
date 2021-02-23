@@ -1,0 +1,51 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <button onclick="random_item()">start</button>
+        <p hidden id="titok">
+        <button onclick="location.reload()">retry</button>
+        <button onclick="cancel_item()">cancel</button>
+    </p>
+        <script>
+        
+
+  var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  var numbers1 = [];
+function random_item() 
+{
+  
+  var gen_num = 0;
+
+  
+  
+  for (i = 0; i < numbers.length+1; i++) {
+    
+    gen_num = Math.floor(Math.random()* 11)
+    var remove_elem = numbers.indexOf(gen_num);
+   for(j=0; j<numbers.length+1; j++){
+    console.log(numbers.length);
+    if(gen_num == numbers[j]){
+      numbers.splice(remove_elem, 1);
+      var tag = document.getElementById('titok').innerHTML += ' ' + gen_num;
+      document.getElementById('titok').removeAttribute("hidden");
+         return;
+    }
+    else{
+      i=0
+    }
+   
+  }
+  
+    }
+  }
+  function cancel_item(){
+    document.getElementById('titok').setAttribute('style','display:none');
+  }
+
+
+
+        </script>
+
+    </body>
+</html>
